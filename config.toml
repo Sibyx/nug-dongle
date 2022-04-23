@@ -1,0 +1,20 @@
+[general]
+port = 5801
+bind = [
+    "::",
+    "192.168.40.147"
+]
+log_level = "DEBUG"
+
+[zeroconf]
+name = "_iodongle"
+
+[services.keyboard]
+device = "/dev/hidg0"
+
+[services.mouse]
+device = "/dev/hidg0"
+
+[syslog]
+ip = "127.0.0.1"
+port = 1514
