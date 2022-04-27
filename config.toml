@@ -2,7 +2,7 @@
 port = 5801
 bind = [
     "::",
-    "192.168.40.147"
+    "192.168.40.100"
 ]
 log_level = "DEBUG"
 
@@ -14,6 +14,12 @@ device = "/dev/hidg0"
 
 [services.mouse]
 device = "/dev/hidg0"
+
+[services.video]
+server = '192.168.40.1:8554'
+device = "/dev/video0"
+stderr = '/var/log/nug-dongle/video.stderr.log'
+stdout = '/var/log/nug-dongle/video.stdout.log'
 
 [syslog]
 ip = "127.0.0.1"

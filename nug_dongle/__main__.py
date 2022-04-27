@@ -10,6 +10,7 @@ import tomli as tomli
 from zeroconf import ServiceInfo, Zeroconf, IPVersion
 
 from nug_dongle import version
+from nug_dongle.core.container import ServiceContainer
 from nug_dongle.core.server import DongleServer
 
 
@@ -51,7 +52,7 @@ if __name__ == '__main__':
             port=config['general']['port'],
             properties={
                 'version': version.__version__,
-                'services': ('keyboard', 'mouse', 'video')
+                'services': list(config['services'].keys())
             },
         )
         zeroconf = Zeroconf(ip_version=IPVersion.All)
@@ -62,9 +63,11 @@ if __name__ == '__main__':
 
     # https://gist.github.com/davesteele/276a17315cff728bb5932c59329da850
 
+    services = ServiceContainer(config)
+
     try:
         asyncio.run(
-            DongleServer.factory(config)
+            DongleServer.factory(config, services)
         )
     except KeyboardInterrupt:
         if zeroconf:
