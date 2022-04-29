@@ -35,7 +35,7 @@ class DongleServer(Protocol):
                 logging.debug("Received START_STREAM message (context=%s)", self._context)
                 payload = StartStream()
                 payload.read(buffer)
-                self._services.video.start(payload['width'], payload['height'], "vnc-nug-server")
+                self._services.video.start(payload['width'].value, payload['height'].value, "vnc-nug-server")
             case self.MessageType.STOP_STREAM:
                 logging.debug("Received STOP_STREAM message (context=%s)", self._context)
                 payload = StopStream()
