@@ -1,5 +1,4 @@
-from asyncio import Transport
-from typing import Optional
+from asyncio import StreamReader, StreamWriter
 from uuid import uuid4, UUID
 
 
@@ -7,7 +6,8 @@ class Context:
     def __init__(self, config: dict):
         self._id = uuid4()
         self._config = config
-        self._transport = None
+        self._reader = None
+        self._writer = None
 
     def __str__(self):
         return str(self._id)
@@ -17,12 +17,20 @@ class Context:
         return self._id
 
     @property
-    def transport(self) -> Optional[Transport]:
-        return self._transport
+    def reader(self) -> StreamReader:
+        return self._reader
 
-    @transport.setter
-    def transport(self, value: Transport):
-        self._transport = value
+    @reader.setter
+    def reader(self, value: StreamReader):
+        self._reader = value
+
+    @property
+    def writer(self) -> StreamWriter:
+        return self._writer
+
+    @writer.setter
+    def writer(self, value: StreamWriter):
+        self._writer = value
 
     @property
     def config(self) -> dict:

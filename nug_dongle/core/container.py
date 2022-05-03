@@ -7,7 +7,7 @@ from nug_dongle.services.video import VideoService
 class ServiceType(Enum):
     KEYBOARD = 'keyboard'
     VIDEO = 'video'
-    MOUSE = 'mouse'
+    POINTER = 'pointer'
 
 
 class ServiceContainer:

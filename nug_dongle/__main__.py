@@ -55,7 +55,7 @@ if __name__ == '__main__':
                 'services': list(config['services'].keys())
             },
         )
-        zeroconf = Zeroconf(ip_version=IPVersion.All)
+        zeroconf = Zeroconf(ip_version=IPVersion.V4Only)
         zeroconf.register_service(info)
     else:
         zeroconf = None

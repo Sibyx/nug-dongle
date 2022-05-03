@@ -12,7 +12,7 @@ name = "_iodongle"
 [services.keyboard]
 device = "/dev/hidg0"
 
-[services.mouse]
+[services.pointer]
 device = "/dev/hidg0"
 
 [services.video]
@@ -21,6 +21,6 @@ device = "/dev/video0"
 stderr = '/var/log/nug-dongle/video.stderr.log'
 stdout = '/var/log/nug-dongle/video.stdout.log'
 
-[syslog]
-ip = "127.0.0.1"
-port = 1514
+#[syslog]
+#ip = "127.0.0.1"
+#port = 1514

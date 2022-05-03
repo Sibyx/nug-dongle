@@ -63,6 +63,14 @@ python-versions = ">=3.5"
 cli = ["click (>=5.0)"]
 
 [[package]]
+name = "tomli"
+version = "2.0.1"
+description = "A lil' TOML parser"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "zeroconf"
 version = "0.38.1"
 description = "Pure Python Multicast DNS Service Discovery Library (Bonjour/Avahi compatible)"
@@ -76,7 +84,7 @@ ifaddr = ">=0.1.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "c2c23c9eead58dcd091d1305beab7fcbc46c93006979a4224659c04632fedd3c"
+content-hash = "d5aa1c4db58581b56e7780149e0c8d0b9f0b71e2b996a0904e71a21ad6189123"
 
 [metadata.files]
 flake8 = [
@@ -106,6 +114,10 @@ pyflakes = [
 python-dotenv = [
     {file = "python-dotenv-0.19.2.tar.gz", hash = "sha256:a5de49a31e953b45ff2d2fd434bbc2670e8db5273606c1e737cc6b93eff3655f"},
     {file = "python_dotenv-0.19.2-py2.py3-none-any.whl", hash = "sha256:32b2bdc1873fd3a3c346da1c6db83d0053c3c62f28f1f38516070c4c8971b1d3"},
+]
+tomli = [
+    {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
+    {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
 ]
 zeroconf = [
     {file = "zeroconf-0.38.1-py3-none-any.whl", hash = "sha256:1b76481c6cf645237d2984e8deae874e1c75f3efc0d40985032942eb2a02b946"},

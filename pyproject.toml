@@ -7,9 +7,9 @@ license = "GPL-3.0-or-later"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-python-dotenv = "^0.19.2"
 zeroconf = "^0.38.1"
 hid = "^1.0.5"
+tomli = "^2.0.1"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^4.0.1"

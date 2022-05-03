@@ -15,7 +15,6 @@ setup(
         ]
     },
     install_requires=[
-        'python-dotenv==0.20.*',
         'zeroconf==0.38.*',
         'tomli >= 1.1.0 ; python_version < "3.11"',
     ],
