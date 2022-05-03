@@ -44,10 +44,11 @@ class DongleServer(Protocol):
                 logging.debug("Received START_STREAM message (context=%s)", self.context)
                 payload = frames.StartStream()
                 await payload.read(self.context.reader)
-                # self._services.video.start(payload['width'].value, payload['height'].value, "vnc-nug-server")
+                self._services.video.start(payload['width'].value, payload['height'].value, "vnc-nug-server")
+                logging.debug("Started VideoService (context=%s)", self.context)
             case self.MessageType.STOP_STREAM:
                 logging.debug("Received STOP_STREAM message (context=%s)", self.context)
-                # self._services.video.stop()
+                self._services.video.stop()
             case self.MessageType.POINTER_EVENT:
                 payload = frames.PointerEvent()
                 await payload.read(self.context.reader)
@@ -55,6 +56,7 @@ class DongleServer(Protocol):
                     "Received POINTER_EVENT message (context=%s,x=%s,y=%s)",
                     self.context, payload.x.value, payload.y.value
                 )
+                self._services.pointer.pointer(payload.x.value, payload.y.value, payload.buttons.value)
             case self.MessageType.KEY_EVENT:
                 payload = frames.KeyEvent()
                 await payload.read(self.context.reader)

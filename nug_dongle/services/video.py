@@ -9,6 +9,7 @@ class VideoService:
         self._config = config
 
     def start(self, width: int, height: int, stream_name: str):
+        logging.debug("Starting VideoService")
         if not self._process:
             with open(self._config['stdout'], "ab") as out, open(self._config['stderr'], "ab") as err:
                 # MJPEG
